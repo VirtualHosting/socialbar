@@ -1,0 +1,117 @@
+@media screen and (max-width: 600px) {
+  .socialmedia{
+    display: none;
+  }
+}
+
+.body {
+  margin: 0;
+  position: relative;
+  font-family: Barlow, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: 16px;
+}
+// Variables
+$dribbble: #ea4c89;
+$twitter:  #00aced;
+$github:   #aaa;
+$codepen:  #fedd31;
+$linkedin: #0077b5;
+
+ul {
+  position: fixed;
+  top: 50%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  li {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    margin: 0 0 8px 0;
+    color: #fff;
+    cursor: pointer;
+    height: 36px;
+    overflow: hidden;
+
+    i.fa {
+      font-size: 1.2rem;
+      width: 36px;
+      text-align: center;
+      position: relative;
+      opacity: 0.85;
+      top: 0.04em;
+
+      &.fa-dribbble {font-size: 1.3em;}
+      &.fa-linkedin {font-size: 1.1em;}
+      &.fa-github {font-size: 1.45em;}
+    }
+
+    span {
+      font-size: 16px;
+      transform: translate(0, -50%);
+      top: 50%;
+      left: 36px;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      background: rgba(0,0,0,0.6);
+
+      span {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 90ms;
+      }
+      i {opacity: 1;}
+      i.fa-dribbble {color: $dribbble;}
+      i.fa-twitter {color: $twitter;}
+      i.fa-codepen {color: $codepen;}
+      i.fa-github {color: $github;}
+      i.fa-linkedin {color: $linkedin;}
+    }
+  }
+
+  &.float {
+    left: 1%;
+
+    li {
+      width: 36px;
+      border-radius: 22px;
+
+      &:hover {
+        width: 112px;
+      }
+    }
+
+    li {
+      width: 40px;
+      border-radius: 22px 0 0 22px;
+
+      &:hover {
+        width: 110px;
+      }
+    }
+  }
+}
+
+  a {
+    text-decoration: none;
+    color: $twitter;
+  }
+
+.socialmedia{
+  height: 100vh;
+  min-height: 480px;
+}
